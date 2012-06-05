@@ -49,6 +49,10 @@ def collatz_eval (i, j) :
     return v
 
 def cycleLength (x):
+	"""
+	x is an integer > 0
+	return the cycle length
+	"""
 	assert x > 0;
 	v = 1
 	while x != 1:

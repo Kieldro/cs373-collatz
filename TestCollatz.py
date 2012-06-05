@@ -20,7 +20,7 @@ To test the program:
 import StringIO
 import unittest
 
-from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve
+from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve, cycleLength
 
 # -----------
 # TestCollatz
@@ -58,6 +58,22 @@ class TestCollatz (unittest.TestCase) :
     def test_eval_4 (self) :
         v = collatz_eval(900, 1000)
         self.assert_(v == 174)
+
+    # -----------
+    # cycleLength
+    # -----------
+
+    def test_cycleLength_1 (self) :
+        c = cycleLength(1)
+        self.assert_(c == 1)
+
+    def test_cycleLength_2 (self) :
+        c = cycleLength(8)
+        self.assert_(c == 4)
+
+    def test_cycleLength_3 (self) :
+        c = cycleLength(512)
+        self.assert_(c == 10)
 
     # -----
     # print
