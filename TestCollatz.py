@@ -64,15 +64,15 @@ class TestCollatz (unittest.TestCase) :
     # -----------
 
     def test_cycleLength_1 (self) :
-        c = cycleLength(1, {})
+        c = cycleLength(1)
         self.assert_(c == 1)
 
     def test_cycleLength_2 (self) :
-        c = cycleLength(8, {})
+        c = cycleLength(8)
         self.assert_(c == 4)
 
     def test_cycleLength_3 (self) :
-        c = cycleLength(512, {})
+        c = cycleLength(512)
         self.assert_(c == 10)
 
     # -----

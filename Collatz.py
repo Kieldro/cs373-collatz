@@ -6,11 +6,14 @@
 # Glenn P. Downing
 # ---------------------------
 
+import math
+
+DEBUG = not True
+cache = {}
+
 # ------------
 # collatz_read
 # ------------
-DEBUG = not True
-cache = {}
 
 def collatz_read (r, a) :
     """
@@ -47,13 +50,17 @@ def collatz_eval (i, j) :
     
     v = 1
     for n in range(i, j+1):		# range() does not include last number
-    	cLen = cycleLength(n, cache)
+    	cLen = cycleLength(n)
     	v = max(cLen, v)
     
     assert v > 0
     return v
 
-def cycleLength (n, cache):
+# -------------
+# cycleLength
+# -------------
+
+def cycleLength (n):
 	"""
 	x is an integer > 0
 	return the cycle length
@@ -77,6 +84,19 @@ def cycleLength (n, cache):
 	
 	assert v > 0
 	return v
+
+# -------------
+# precompute
+# -------------
+
+def precompute ():
+	"""
+	precomputes the cycle length of all powers of 2
+	"""
+	cLen = 2
+	for n in range(1, int(math.log(10**6, 2)) ):
+		cache[2**n] = cLen
+		cLen += 1
 
 # -------------
 # collatz_print
@@ -103,6 +123,7 @@ def collatz_solve (r, w) :
     w is a writer
     """
     a = [0, 0]
+    #precompute()
     while collatz_read(r, a) :
         v = collatz_eval(a[0], a[1])
         collatz_print(w, a[0], a[1], v)
