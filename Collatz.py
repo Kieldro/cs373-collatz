@@ -9,6 +9,8 @@
 # ------------
 # collatz_read
 # ------------
+DEBUG = not True
+cache = {}
 
 def collatz_read (r, a) :
     """
@@ -39,29 +41,41 @@ def collatz_eval (i, j) :
     """
     assert i > 0
     assert j > 0
-    # <your code>
+    #assert i <= j
+    if i > j:
+    	i, j = j, i		# swap
+    
     v = 1
-    for x in range(i, j):
-    	c = cycleLength(x)
-    	v = max(c, v)
+    for n in range(i, j+1):		# range() does not include last number
+    	cLen = cycleLength(n, cache)
+    	v = max(cLen, v)
     
     assert v > 0
     return v
 
-def cycleLength (x):
+def cycleLength (n, cache):
 	"""
 	x is an integer > 0
 	return the cycle length
 	"""
-	assert x > 0;
+	assert n > 0;
+	if DEBUG: print cache
 	v = 1
-	while x != 1:
+	k = n
+	while k != 1:
+		#check cache
+		if k in cache:
+			v += cache[k] -1
+			break
 		v += 1
-		if x % 2:
-			x = 3*x + 1
+		if k % 2:
+			k = 3*k + 1
 		else:
-			x /= 2
+			k /= 2
+	# cache n
+	cache[n] = v
 	
+	assert v > 0
 	return v
 
 # -------------
@@ -92,3 +106,8 @@ def collatz_solve (r, w) :
     while collatz_read(r, a) :
         v = collatz_eval(a[0], a[1])
         collatz_print(w, a[0], a[1], v)
+
+# Main
+if __name__ == "__main__":
+	import sys
+	collatz_solve(sys.stdin, sys.stdout)

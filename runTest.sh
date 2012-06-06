@@ -1,17 +1,22 @@
 # file variables
 python=true
 java=false
+
+inFile="RunCollatz.in"
 outFile="RunCollatz.out"
 compile=false
 grep=false
 noError=false
 
 if $python; then
-	echo TESTING PYTHON CODE...
+	echo PYTHON UNIT TESTS...
 	python TestCollatz.py #> TestCollatz.py.out
 
 	echo RUNNING PYTHON CODE...
-	python RunCollatz.py < RunCollatz.in #> $outFile
+	python Collatz.py < $inFile #> $outFile
+	
+	echo CHECKING OUTPUT...
+	#diff -lc RunCollatz.out RunCollatz.in
 fi
 
 if $java; then

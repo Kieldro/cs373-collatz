@@ -1,0 +1,36 @@
+commit e927cc38ea7f74453206fa4288ad19e4ad6f541a
+Merge: fe0fcca 51b3bcb
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jun 5 16:55:48 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-collatz
+
+commit fe0fcca451eb00aff34d3be4f9efca643429fadf
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jun 5 16:55:29 2012 -0500
+
+    added 3 unit tests for cycleLength()
+
+commit 51b3bcbaf42967387850bdf2c0a083c9fe53aecd
+Author: Ian <kieldro@gmail.com>
+Date:   Tue Jun 5 12:43:39 2012 -0500
+
+    added unique
+
+commit fb3a789c35fff6f24cda6065d8a82b54846ae221
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jun 5 12:33:45 2012 -0500
+
+    updated readme with questions and added requirement issues.
+
+commit a32a0a254648559dbd77709a22a379901c15d91f
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Mon Jun 4 17:12:01 2012 -0500
+
+    simple solution implemented.
+
+commit 66344797e8d3fd36736466708b6ba53639ef837d
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Mon Jun 4 16:51:06 2012 -0500
+
+    Added all initial files.
