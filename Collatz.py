@@ -44,12 +44,12 @@ def collatz_eval (i, j) :
     """
     assert i > 0
     assert j > 0
-    #assert i <= j
-    if i > j:
-    	i, j = j, i		# swap
+    
+    if i > j:	i, j = j, i		# swap
+    assert i <= j
     
     v = 1
-    for n in range(i, j+1):		# range() does not include last number
+    for n in xrange(i, j+1):		# xrange() does not include last number
     	cLen = cycleLength(n)
     	v = max(cLen, v)
     
@@ -62,8 +62,8 @@ def collatz_eval (i, j) :
 
 def cycleLength (n):
 	"""
-	x is an integer > 0
-	return the cycle length
+	n is an integer > 0
+	return the cycle length of n
 	"""
 	assert n > 0;
 	if DEBUG: print cache
@@ -94,7 +94,7 @@ def precompute ():
 	precomputes the cycle length of all powers of 2
 	"""
 	cLen = 2
-	for n in range(1, int(math.log(10**6, 2)) ):
+	for n in xrange(1, int(math.log(10**6, 2)) ):
 		cache[2**n] = cLen
 		cLen += 1
 
