@@ -74,11 +74,12 @@ def cycleLength (n):
 		if k in cache:
 			v += cache[k] -1
 			break
-		v += 1
 		if k % 2:
-			k = 3*k + 1
+			k = k + (k >> 1) + 1		# computes 2 steps
+			v += 2
 		else:
 			k /= 2
+			v += 1
 	# cache n
 	cache[n] = v
 	
