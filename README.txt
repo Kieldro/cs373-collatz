@@ -12,12 +12,12 @@ Comments:
 questions:
 * What does chmod ugo+x RunCollatz.py do?
 * tab vs 2 space indention
-* ant vs bash script usage?
 * don't submit java files?
 * convention/style
 * failure test is a test that always fail eg x = 0?
 * is 8 1 allowed as input?
 * global variables bad?
+* how does hashbang work?
 
 I attest that I have written every line of code that I have submitted
 and I take full responsibility for the origin of all the code submitted.
