@@ -17,6 +17,7 @@ questions:
 * failure test is a test that always fail eg x = 0?
 * is 8 1 allowed as input?
 * global variables bad?
+* git mv f1 f2
 * how does hashbang work?
 
 I attest that I have written every line of code that I have submitted
