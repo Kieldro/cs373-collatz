@@ -42,6 +42,7 @@ def collatz_eval (i, j) :
     j is the end       of the range, inclusive
     return the max cycle length in the range [i, j]
     """
+    # preconditions
     assert i > 0
     assert j > 0
     
@@ -53,7 +54,12 @@ def collatz_eval (i, j) :
     	cLen = cycleLength(n)
     	v = max(cLen, v)
     
+    # invariant
+    assert v >= cLen
+    
+    # return value validity
     assert v > 0
+    
     return v
 
 # -------------
@@ -65,11 +71,13 @@ def cycleLength (n):
 	n is an integer > 0
 	return the cycle length of n
 	"""
+	# preconditions
 	assert n > 0;
-	if DEBUG: print cache
+	
 	v = 1
 	k = n
 	while k != 1:
+		if DEBUG: print k
 		#check cache
 		if k in cache:
 			v += cache[k] -1
@@ -83,7 +91,15 @@ def cycleLength (n):
 	# cache n
 	cache[n] = v
 	
+	# invariant
+	assert k > 0, 'invariant violated.' + str(k)
+	
+	# postconditions
+	assert cache != {}, 'Nothing was cached.'
+	
+	# return value validity
 	assert v > 0
+	
 	return v
 
 # -------------
@@ -129,7 +145,10 @@ def collatz_solve (r, w) :
         v = collatz_eval(a[0], a[1])
         collatz_print(w, a[0], a[1], v)
 
-# Main
+# ----
+# main
+# ----
+
 if __name__ == "__main__":
 	import sys
 	collatz_solve(sys.stdin, sys.stdout)
