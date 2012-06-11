@@ -1,3 +1,15 @@
+commit 1b43437fa84371c646a901dc724d4f13aa7df13b
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Mon Jun 11 15:05:28 2012 -0500
+
+    renamed build file.
+
+commit 191256b4e067b571bf103024e8fa4a993d33dd31
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Mon Jun 11 15:03:27 2012 -0500
+
+    updated in/out files and build script.
+
 commit e5414fc285250348a66db3c1919244dcd9230dea
 Author: Ian Buitrago <kieldro@gmail.com>
 Date:   Mon Jun 11 12:55:23 2012 -0500

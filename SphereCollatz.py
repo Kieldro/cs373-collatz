@@ -106,19 +106,6 @@ def cycleLength (n):
 	return v
 
 # -------------
-# precompute
-# -------------
-
-def precompute ():
-	"""
-	precomputes the cycle length of all powers of 2
-	"""
-	cLen = 2
-	for n in xrange(1, int(math.log(10**6, 2)) ):
-		cache[2**n] = cLen
-		cLen += 1
-
-# -------------
 # collatz_print
 # -------------
 
@@ -143,7 +130,6 @@ def collatz_solve (r, w) :
     w is a writer
     """
     a = [0, 0]
-    #precompute()
     
     while collatz_read(r, a) :
         v = collatz_eval(a[0], a[1])
