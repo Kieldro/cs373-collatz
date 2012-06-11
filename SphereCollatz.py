@@ -6,6 +6,11 @@
 # Glenn P. Downing
 # ---------------------------
 
+import math
+
+DEBUG = not True
+cache = {}
+
 # ------------
 # collatz_read
 # ------------
@@ -37,12 +42,78 @@ def collatz_eval (i, j) :
     j is the end       of the range, inclusive
     return the max cycle length in the range [i, j]
     """
+    # preconditions
     assert i > 0
     assert j > 0
-    # <your code>
+    
+    if i > j:	i, j = j, i		# swap
+    assert i <= j
+    
     v = 1
+    for n in xrange(i, j+1):		# xrange() does not include last number
+    	cLen = cycleLength(n)
+    	v = max(cLen, v)
+    
+    # invariant
+    assert v >= cLen
+    
+    # return value validity
     assert v > 0
+    
     return v
+
+# -------------
+# cycleLength
+# -------------
+
+def cycleLength (n):
+	"""
+	n is an integer > 0
+	return the cycle length of n
+	"""
+	# preconditions
+	assert n > 0;
+	
+	v = 1
+	k = n
+	while k != 1:
+		if DEBUG: print k
+		#check cache
+		if k in cache:
+			v += cache[k] -1
+			break
+		if k % 2:
+			k = k + (k >> 1) + 1		# computes 2 steps
+			v += 2
+		else:
+			k /= 2
+			v += 1
+	# cache n
+	cache[n] = v
+	
+	# invariant
+	assert k > 0, 'invariant violated.' + str(k)
+	
+	# postconditions
+	assert cache != {}, 'Nothing was cached.'
+	
+	# return value validity
+	assert v > 0
+	
+	return v
+
+# -------------
+# precompute
+# -------------
+
+def precompute ():
+	"""
+	precomputes the cycle length of all powers of 2
+	"""
+	cLen = 2
+	for n in xrange(1, int(math.log(10**6, 2)) ):
+		cache[2**n] = cLen
+		cLen += 1
 
 # -------------
 # collatz_print
@@ -69,6 +140,16 @@ def collatz_solve (r, w) :
     w is a writer
     """
     a = [0, 0]
+    #precompute()
+    
     while collatz_read(r, a) :
         v = collatz_eval(a[0], a[1])
         collatz_print(w, a[0], a[1], v)
+
+# ----
+# main
+# ----
+
+if __name__ == "__main__":
+	import sys
+	collatz_solve(sys.stdin, sys.stdout)

@@ -141,6 +141,7 @@ def collatz_solve (r, w) :
     """
     a = [0, 0]
     #precompute()
+    
     while collatz_read(r, a) :
         v = collatz_eval(a[0], a[1])
         collatz_print(w, a[0], a[1], v)

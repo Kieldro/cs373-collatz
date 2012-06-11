@@ -1,3 +1,58 @@
+commit 2fca1bc8f5e87fa24177f1c0cc0834b521e5b671
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Mon Jun 11 12:22:36 2012 -0500
+
+    added more assertions.
+
+commit 030ce1a786270ebff075cfcf791c899730a4c14d
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Mon Jun 11 09:54:25 2012 -0500
+
+    adds acceptance tests
+
+commit 6fde0fb9fe159e8466e2546c1f60797971069efa
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Mon Jun 11 08:24:12 2012 -0500
+
+    acceptance test generator added.
+
+commit 2d4102b732de5c9f57c1159173117e904c1a7a07
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Sun Jun 10 16:00:47 2012 -0500
+
+    1 line change to text file.
+
+commit 72c9a9c4c83f74e29a7c64c76612ff1768c685e8
+Merge: 5569b48 6acde60
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jun 8 15:42:49 2012 -0500
+
+    Merge branch 'master' of github.com:Kieldro/cs373-collatz
+
+commit 5569b484ce763d73a3df00d7f819861ad3404883
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jun 8 15:42:45 2012 -0500
+
+    optimized odd case.
+
+commit 6acde60f07ee8a33883ebdae4b98e517ca7a0c62
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Fri Jun 8 12:52:35 2012 -0500
+
+    adds pydoc html file.
+
+commit 238982a03dd6fb5574b7a2a7d18632278a7164d0
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jun 5 19:31:35 2012 -0500
+
+    Added precompute() but had no effect on performance.
+
+commit 2a1a513e1de0c79d20b58db704e72b90b24c80e2
+Author: Ian Buitrago <kieldro@gmail.com>
+Date:   Tue Jun 5 19:07:44 2012 -0500
+
+    Sphere accepted version.
+
 commit e927cc38ea7f74453206fa4288ad19e4ad6f541a
 Merge: fe0fcca 51b3bcb
 Author: Ian Buitrago <kieldro@gmail.com>
