@@ -21,8 +21,8 @@ def cycleLength (k):
 	return v
 
 # main
-step = 100
-for i in xrange(1, 10**3-step, step):
-	j  = i + step
-	print str(i)	 + ' ' + str(j) + ' ' + str(maxCycle(i, j) )
-
+if __name__ == '__main__':
+	step = 1000
+	for i in xrange(1, 10**6-step, step):
+		j  = i + step
+		print str(i)	 + ' ' + str(j) + ' ' + str(maxCycle(i, j) )
