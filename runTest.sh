@@ -10,13 +10,13 @@ noError=false
 
 if $python; then
 	echo PYTHON UNIT TESTS...
-	python TestCollatz.py #> TestCollatz.py.out
+	python TestCollatz.py &> TestCollatz.py.out
 
 	echo RUNNING PYTHON CODE...
-	python Collatz.py < $inFile #> $outFile
+	python Collatz.py < $inFile > $outFile
 	
 	echo CHECKING OUTPUT...
-	#diff -lc RunCollatz.out RunCollatz.in
+	diff -lc RunCollatz.out RunCollatz.in
 fi
 
 if $java; then
@@ -42,3 +42,10 @@ fi
 free 
 comments!
 --MULTICOMMENT--
+
+echo GENERATING COMMIT LOG...
+git log > Collatz.log
+
+echo UPDATING SPHERECOLLATZ FILE...
+cp Collatz.py SphereCollatz.py
+

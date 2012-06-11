@@ -1,7 +1,6 @@
-Traceback (most recent call last):
-  File "TestCollatz.py", line 23, in <module>
-    from Collatz import collatz_read, collatz_eval, collatz_print, collatz_solve, cycleLength
-  File "/v/filer4b/v38q001/keo/cs373/cs373-collatz/Collatz.py", line 98
-    assert cache != {}, "Nothing was cached."
-                                            ^
-IndentationError: unindent does not match any outer indentation level
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+OK
+TestCollatz.py

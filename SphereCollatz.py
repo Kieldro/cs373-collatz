@@ -49,6 +49,9 @@ def collatz_eval (i, j) :
     if i > j:	i, j = j, i		# swap
     assert i <= j
     
+    if i < j/2:		# makes Sphere v1 run slower, idk why
+    	i = j/2
+    
     v = 1
     for n in xrange(i, j+1):		# xrange() does not include last number
     	cLen = cycleLength(n)

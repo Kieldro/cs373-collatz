@@ -7,7 +7,7 @@ CS Username: keo
 GitHub ID: Kieldro
 GitHub Repository Name: cs373-collatz
 Estimated number of hours: 10
-Actual    number of hours: 
+Actual    number of hours: 12
 Comments:
 questions:
 * What does chmod ugo+x RunCollatz.py do?
